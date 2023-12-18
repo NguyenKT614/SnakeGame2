@@ -425,6 +425,9 @@ namespace SnakeGame
             do
                 food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
             while (FoodOnBody() || FoodOnObstacle() || (FoodOnBody() && FoodOnObstacle()));
+
+            // Cập nhật thời gian tạo food lần cuối
+            lastFoodTime = DateTime.Now;
         }
 
         // Kiểm tra xem food có nằm TRÙNG vị trí của body hay không
